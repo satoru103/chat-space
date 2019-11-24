@@ -25,7 +25,7 @@
 ## groupテーブル
 | Column | Type | Options |
 | ------ | ---- | ------- |
-| name | integer | null :false |
+| name | string | null :false |
 ### Assicuation_groupテーブル
 - has_many :users, through: :group_users
 - has_many :messages
