@@ -1,0 +1,23 @@
+.main_contents
+  .header
+    .groupname
+      %ul.groupname groupname 
+      %li.menber Member : satoru
+    %a.edit-btn{href: "#"} 
+      .edit-btn__header
+        edit
+      
+  .main_contents__messages
+    .box
+      %p.name satoru
+      %p.messages Hello world！
+
+  .main_contents__form
+    %form.new-messages
+      .main_contents__form_inputbox
+        %input{placeholder: "type a message",type:"text",class:"messages"}
+        %label{class:"input__boximage"}
+          =icon('fas', 'image')
+          %input{type: "file",class:"input__boximage__imagefile"}  
+          
+      %input{class:"submit-btn",type:"submit",value:"Send"} 
