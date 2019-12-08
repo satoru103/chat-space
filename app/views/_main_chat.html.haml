@@ -3,10 +3,10 @@
     .groupname
       %ul.groupname groupname 
       %li.menber Member : satoru
-    %a.edit-btn{href: "#"} 
-      .edit-btn__header
-        edit
-      
+    .edit-btn__header 
+      %li.edit-btn 
+        =link_to 'Edit',"#",class:"edit-btn" 
+         
   .main_contents__messages
     .box
       %p.name satoru
