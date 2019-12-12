@@ -2,13 +2,13 @@
   .side_bar__Menu
     .side_bar__Menu__block
       %p.username
-        seo 
+        = current_user.name
       %ul.icon
         %li.icon_cab
           =link_to "#",class:"icon_cab" do
             =icon('fas', 'edit')
         %li.icon_cog
-          =link_to "#",class:"icon_cog" do
+          =link_to edit_user_path(current_user),class:"icon_cog" do
             =icon('fas', 'cog')
   .side_bar__group
     .example
