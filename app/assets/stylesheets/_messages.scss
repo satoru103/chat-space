@@ -39,7 +39,7 @@ $selection-box-sizing:selection-box-sizing;
     height: calc(100vw - 100px);
     padding: 20px 20px 0 20px;
     box-sizing: selection-box-sizing;
-    div.example{
+    &__block{
       box-sizing: selection-box-sizing;
       padding-bottom: $selection-percentage;  
       p.group_name{
@@ -55,21 +55,6 @@ $selection-box-sizing:selection-box-sizing;
         color: $selection-color;
         }
       }
-    div.examples{  
-      padding-bottom: $selection-percentage;
-      box-sizing: selection-box-sizing;
-      p.group_names{
-        font-size: 15px;
-        font-weight: bold;
-        color:$selection-color;
-        padding-bottom: 5px;
-        }
-      p.group_messages{
-        font-size: 11px;
-        font-weight: bold;
-        color: $selection-color;
-        }
-      } 
     }
   }   
 
