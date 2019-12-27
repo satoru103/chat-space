@@ -8,16 +8,16 @@
         =link_to 'Edit','edit_group_path'  
          
   .main_contents__messages
-    .box
-      %p.name satoru
-      %p.messages Hello world！
+    .header
+      %p message.user.name
+      %p messages.created_at.strftime("%Y/%m/%d %H:%M")
 
   .main_contents__form
-    %form.new-messages
-      .main_contents__form_inputbox
-        %input{placeholder: "type a message",type:"text",class:"messages"}
-        %label{class:"input__boximage"}
-          =icon('fas', 'image')
-          %input{type: "file",class:"input__boximage__imagefile"}  
-          
-      %input{class:"submit-btn",type:"submit",value:"Send"} 
+    .form
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class: "messages", placeholder:"type a message"
+        .form__input
+          = f.label :image,class: "input__boximage" do
+            = icon('fas', 'image', class: 'icon')
+            = f.file_field :image, class: "input__boximage__imagefile"
+        = f.submit 'Send', class: 'submit-btn'
