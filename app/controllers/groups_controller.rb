@@ -3,8 +3,6 @@ class GroupsController < ApplicationController
   before_action :set_group, only: [:edit, :update]
 
   def index
-    @group = Group.new
-    @message = Message.new
   end
 
   def new
