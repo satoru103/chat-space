@@ -77,6 +77,7 @@ $selection-box-sizing:selection-box-sizing;
       
     li.icon_cab a{
       color:$selection-color;
+      padding-right: 5px;
     }
     li.icon_cog a{
       color: $selection-color;
@@ -87,31 +88,37 @@ $selection-box-sizing:selection-box-sizing;
 
 
 /*main_chat.html*/
-.main_contents{
+.main_messages{
   display: inline-block;
   float: right;
   width: calc(100vw - 300px);
   position: relative;
   height: 100vw;
-  div.header{
+  div.header_message{
     display: flex;
-    justify-content: space-between;
     padding: 0 40px;
     height: 100px;
-    box-sizing: selection-box-sizing;
-      div.groupname{
-      box-sizing: selection-box-sizing;
+    div.upper-message{
       margin-top: 35px;
-      padding-bottom: 15px;
-        ul.groupname{
-          list-style: none;
+      justify-content: space-between;
+      box-sizing: selection-box-sizing;
+        h2.user-name{
+        box-sizing: selection-box-sizing;
+        margin-bottom: 15px;
+        font-size: 20px;
+        font-weight: 400;
+        color: #333;
         }
-        li.menber{
-          color: #999999;
+        ul.group-name{
+          list-style: none;
+          display: flex;
           font-size: 12px;
-          list-style: none;
-          padding-top: 20px;
+          color: #999999;
+        li.right{
+
+          }
         }
+        
       }
       div.edit-btn__header{
         height: $selection-percentage;
@@ -125,70 +132,64 @@ $selection-box-sizing:selection-box-sizing;
         right: $selection-percentage;
         position: absolute;
         display:block;
-           li.edit-btn{
-            color: #38aef0;
-            list-style: none;
-            .edit-btn{
-              text-decoration: none;
-            }
+          li.edit-btn{
+          color: #38aef0;
+          list-style: none;
+          .edit-btn{
+          text-decoration: none;
           }
+        } 
+      }  
+    
+      
+    } /*div.headr_message*/
+  
+
+  div.main_contents__messages{
+  height: calc(100vw - 100px - 90px);
+  background-color: #fafafa;
+  padding: 40px 40px;
+    div.box{
+      p.name{
+        font-size: 20px;
       }
-    } 
+    }
   }
 
-    div.main_contents__messages{
-    height: calc(100vw - 100px - 90px);
-    background-color: #fafafa;
-    padding: 40px 40px;
-      div.box{
-        p.name{
-          font-size: 20px;
-        }
+  .form {
+    background-color: #DDDDDD;
+    box-sizing: border-box;
+    height: 90px;
+    padding: 20px 50px 20px 40px;
+    &__message {
+      border: none;
+      float: left;
+      height: 50px;
+      width: calc(100% - 150px);
+    }
+    &__mask {
+      background-color: $white;
+      float: left;
+      height: 50px;
+      padding-right: 10px;
+      &__image {
+        font-size: 20px;
+        line-height: 50px;
+      }
+      .hidden {
+        display: none;
       }
     }
-
-    div.main_contents__form{
-        position: relative;
-        bottom: 0;
-        display: flex;
-        height: 90px;
-        background-color: #dddd;
-        width: calc(100vw - 300px);
-        box-sizing: selection-box-sizing;
-        padding: 20px 40px;  
-      form.new-messages{
-        display: flex;
-        width: 100%;
-        div.main_contents__form_inputbox{
-          position: relative;
-          width: 100%;
-          box-sizing:  selection-box-sizing;
-          input.messages{
-            width: 100%;
-            height: 50px;
-            padding: 0 40px 0 10px;
-          }
-          label.input__boximage{
-            position: absolute;
-            z-index: 1;
-            right: 10px;
-            top: 10px;
-            font-size: 20px;
-            input.input__boximage__imagefile{
-              display: none;
-            }
-          }
-        }
-        input.submit-btn{
-          height: 50px;
-          color: $selection-color;
-          background-color:#38aef0;
-          text-align: center;
-          border: solid 1;
-          text-decoration:none;
-          margin-left: 20px;
-          padding: 0 30px;
-          box-sizing: selection-box-sizing;
-        }
-      }  
+    &__submit {
+      background-color: $light_blue;
+      border: none;
+      color: $white;
+      float: right;
+      font-size: 16px;
+      height: 50px;
+      margin-left: 15px;
+      padding: 0 30px;
     }
+  }
+}  
+  
