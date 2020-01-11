@@ -20,9 +20,6 @@ $selection-box-sizing:selection-box-sizing;
   width: 300px;
   box-sizing: selection-box-sizing;
   float: left;
-  height: 100%;
-  line-height: 100%;
-  display: inline-block;
   &__Menu{
     padding-left: 20px;
     padding-right: 20px;
@@ -36,7 +33,7 @@ $selection-box-sizing:selection-box-sizing;
     font-weight: bold;
     color: $selection-color;
     background-color: hsl(214, 27%, 25%);
-    height: calc(100vw - 100px);
+    height: calc(100vh - 100px);
     padding: 20px 20px 0 20px;
     box-sizing: selection-box-sizing;
     &__block{
@@ -93,12 +90,13 @@ $selection-box-sizing:selection-box-sizing;
   float: right;
   width: calc(100vw - 300px);
   position: relative;
-  height: 100vw;
   div.header_message{
     display: flex;
     padding: 0 40px;
     height: 100px;
-    div.upper-message{
+    overflow-x: scroll;
+    overflow-y: scroll;
+    div.group-menu{
       margin-top: 35px;
       justify-content: space-between;
       box-sizing: selection-box-sizing;
@@ -114,11 +112,7 @@ $selection-box-sizing:selection-box-sizing;
           display: flex;
           font-size: 12px;
           color: #999999;
-        li.right{
-
-          }
         }
-        
       }
       div.edit-btn__header{
         height: $selection-percentage;
@@ -140,21 +134,43 @@ $selection-box-sizing:selection-box-sizing;
           }
         } 
       }  
-    
-      
     } /*div.headr_message*/
   
 
-  div.main_contents__messages{
-  height: calc(100vw - 100px - 90px);
+  .main_contents__messages{
+  height: calc(100vh - 190px);
   background-color: #fafafa;
   padding: 40px 40px;
-    div.box{
-      p.name{
-        font-size: 20px;
-      }
+  overflow-x: scroll;
+  overflow-y: scroll;
+  .upper-message {
+    display: flex;
+    &__user-name {
+      color: $black;
+      font-size: 16px;
+      font-weight: bold;
+      overflow-x: scroll;
+      overflow-y: scroll;
+    }
+    &__date {
+      color: $light_gray;
+      font-size: 12px;
+      padding-left: 10px;
+      overflow-x: scroll;
+      overflow-y: scroll;
     }
   }
+  .lower-message {
+    margin-top: 10px;
+    &__body {
+      color: $black;
+      font-size: 14px;
+      margin-bottom: 40px;
+      overflow-x: scroll;
+      overflow-y: scroll;
+    }
+  }
+}
 
   .form {
     background-color: #DDDDDD;

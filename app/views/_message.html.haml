@@ -1,0 +1,37 @@
+.header_message
+  .group-menu
+    %h2.user-name
+      = message.user.name
+    %ul.group-name 
+      Member:
+      %li.group-name__list
+        - @group.users.each do |group|
+          = group.name
+
+  .edit-btn__header 
+    %li.edit-btn 
+    =link_to 'Edit', edit_group_path(@group) 
+
+
+.main_contents__messages
+  .upper-message
+    .upper-message__user-name
+      = message.user.name
+    .upper-message__date
+      = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
+  .lower-message
+    - if message.body.present?
+      %p.lower-message__body
+        = message.body
+    = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
+
+.form
+  = form_for [@group, @message] do |f|
+    = f.text_field :body, class: 'form__message', placeholder: 'type a message'
+    .form__mask
+      = f.label :image, class: 'form__mask__image' do
+        = icon('fas', 'image', class: 'icon')
+        = f.file_field :image, class: 'hidden'
+    = f.submit 'Send', class: 'form__submit'
+
+
