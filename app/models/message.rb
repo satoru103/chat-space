@@ -3,5 +3,5 @@ class Message < ApplicationRecord
   belongs_to :group
 
   validates :body, presence: true, unless: :image?
-  mount_uploader :avatar, AvatarUploader
+  mount_uploader :image, AvatarUploader
 end

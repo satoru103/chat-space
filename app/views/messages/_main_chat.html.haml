@@ -1,3 +1,30 @@
 .main_messages
-  = render @messages
+  .header_message
+    .group-menu
+      %h2.user-name
+        = @group.name
+      %ul.group-name 
+        Member:
+        %li.group-name__list
+          - @group.users.each do |group|
+            = group.name
+    .edit-btn__header 
+      %li.edit-btn 
+        =link_to 'Edit', edit_group_path(@group) 
+
+  .main_contents__messages
+    = render @messages
+
+  .form
+    = form_for [@group, @message] do |f|
+      = f.text_field :body, class: 'form__message', placeholder: 'type a message'
+      .form__mask
+        = f.label :image, class: 'form__mask__image' do
+          = icon('fas', 'image', class: 'icon')
+          = f.file_field :image, class: 'hidden'
+      = f.submit 'Send', class: 'form__submit'
+
+
+
+
  
