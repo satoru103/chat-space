@@ -2,8 +2,7 @@ $(function(){
 
   function buildHTML(message){
     if (message.image && message.body) {
-      var html =  
-      `<div class="message" data-message-id= ` + message.id +`>` +
+      var html = `<div class="messages" data-message-id= ` + message.id +`>` +
         `<div class="upper-message">` +
           `<div class="upper-message__user-name">` +
             message.user_name +
@@ -19,9 +18,8 @@ $(function(){
         `<img src=" `+ message.image +` " class="lower-message__image" >` +
        `</div>` +
      `</div>`
-    }else if (message.image) {
-      var html = 
-    `<div class=".messages" data-message-id =` + message.id +`>` +
+    } else if (message.image) {
+      var html = `<div class="messages" data-message-id =` + message.id +`>` +
       `<div class='upper-message'>` +
       `<div class='upper-message__user-name'>` +
           message.user_name +
@@ -37,23 +35,23 @@ $(function(){
     `</div>` +
      `<img src ="` + message.image + `" class="lower-message__image" >` +
     `</div>`
-    }else if ( message.body ) {
+    } else if (message.body) {
       var html = 
-    `<div class=".messages" data-message-id=` + message.id + `}>` +
+    `<div class="messages" data-message-id=` + message.id + `>` +
       `<div class='upper-message'>` +
         `<div class='upper-message__user-name'>` +
           message.user_name +
         `</div>` +
           `<div class='upper-message__date'>` +
             message.created_at +
-        `</div>` +
-       `</div>` +
+          `</div>` +
+      `</div>` +
          `<div class='lower-message'>` +
             `<p class='lower-message__body'>` +
               message.body +
             `</p>` +
-        `</div>` +
-    `</div>` 
+         `</div>` +
+      `</div>` 
     };
    return html;
   };
@@ -83,12 +81,12 @@ $(function(){
     });
     
     var reloadMessages = function() {
-      last_message_id = $('.message:last').data("message-id");
+      last_message_id = $('.messages:last').data("message-id");
         $.ajax({
         url: "api/messages",
         type: 'get',
         dataType: 'json',
-        data: {id: last_message_id}
+        data: {id: last_message_id},
       })
       .done(function(messages) {
         if (messages.length !== 0) {
@@ -96,8 +94,8 @@ $(function(){
         $.each(messages, function(i, message) {
           insertHTML += buildHTML(message)
           });
-        $('.messages').append(insertHTML);
-        $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
+        $('.main_contents__messages').append(insertHTML);
+        $('.main_contents__messages').animate({ scrollTop: $('.main_contents__messages')[0].scrollHeight});
         $("#new_message")[0].reset();
         $(".form__submit").prop("disabled", false);
         }

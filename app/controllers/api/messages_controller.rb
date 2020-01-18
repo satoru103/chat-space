@@ -5,4 +5,9 @@ class Api::MessagesController < ApplicationController
     @messages = group.messages.includes(:user).where("id > #{last_message_id}")
   end
 
+  private
+  def tweet_pramas
+    params.require(:user).permit(:name, :job_id)
+  end
+
 end
