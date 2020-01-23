@@ -9,11 +9,12 @@ $(function() {
     $("#user-search-result").append(html);
     }
 
-    function appendErrMsgToHTML(msg){
+    function appendErrMsgToHTML(){
       var html =
       `<div class="chat-group-user clearfix">
          <p class="chat-group-user__name">ユーザーが見つかりません</p>
       </div>`
+      console.log(html)
       $("#user-search-result").append(html);
     }
 

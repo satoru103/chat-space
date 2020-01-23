@@ -40,15 +40,15 @@ $(function(){
     `<div class="messages" data-message-id = ${message.id} > 
       <div class='upper-message'> 
         <div class='upper-message__user-name'> 
-          message.user_name 
+          ${message.user_name} 
         </div> 
           <div class='upper-message__date'>
-            message.created_at 
+            ${message.created_at} 
           </div> 
       </div> 
          <div class='lower-message'>
             <p class='lower-message__body'>
-              message.body 
+              ${message.body} 
             </p> 
          </div> 
       </div>`
