@@ -119,18 +119,19 @@ $selection-box-sizing:selection-box-sizing;
         line-height: $selection-percentage;
         box-sizing: selection-box-sizing;
         align-items: center;
-        border: solid ;
+        border: solid 1px  #38aef0;
         color: #38aef0;
         padding: 0 20px;
         margin-top: 30px;
         right: $selection-percentage;
         position: absolute;
         display:block;
+        list-style: none;
           li.edit-btn{
           color: #38aef0;
-          list-style: none;
-          .edit-btn{
+          a.edit-btn_character{
           text-decoration: none;
+          font-weight: bold;
           }
         } 
       }  

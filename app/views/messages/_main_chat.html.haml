@@ -10,7 +10,7 @@
             = group.name
     .edit-btn__header 
       %li.edit-btn 
-        =link_to 'Edit', edit_group_path(@group) 
+        =link_to 'Edit', edit_group_path(@group),class: 'edit-btn_character'
 
   .main_contents__messages
     = render @messages
